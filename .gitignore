@@ -1,5 +1,15 @@
-components
-build
+# Local
+.DS_Store
+*.local
+*.log*
+
+# Dist
 node_modules
-lib
-yarn.lock
+dist/
+lib/
+storybook-static
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
