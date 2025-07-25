@@ -8,7 +8,7 @@ const getID = (el: Element): string | null => {
 
   if (id !== null && id !== '') {
     // if the ID starts with a number or contains ":" selecting with a hash will cause a DOMException
-    return id.match(/(?:^\d|:)/) ? `[id="${CSS.escape(id)}"]` : '#' + CSS.escape(id);
+    return `#${CSS.escape(id)}`;
   }
   return null;
 };

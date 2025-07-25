@@ -27,13 +27,13 @@ const getAllSelectors = (
   attributesToIgnore: string[]
 ): Record<SelectorType, string | string[] | null> => {
   const funcs: SelectorFunctions = {
-    Tag: getTag,
-    NthChild: getNthChild,
-    Attributes: (elem: Element) => getAttributes(elem, attributesToIgnore),
-    Class: getClassSelectors,
     ID: getID,
+    Tag: getTag,
     Name: getName,
     Href: getHref,
+    Class: getClassSelectors,
+    Attributes: (elem: Element) => getAttributes(elem, attributesToIgnore),
+    NthChild: getNthChild,
   };
 
   return selectors.reduce(
@@ -175,6 +175,9 @@ const getUniqueSelector = (
         if (typeof NthChild === 'string') {
           return NthChild;
         }
+        break;
+
+      default:
         break;
     }
   }
